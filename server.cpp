@@ -7,6 +7,11 @@
 #include <thread>
 #include <vector>
 
+#ifdef __linux__
+#include <pthread.h>
+#endif
+
+
 void handleClient(int clientSocket)
 {
     char buffer[1024];

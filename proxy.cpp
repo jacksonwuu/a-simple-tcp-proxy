@@ -1,10 +1,16 @@
 #include <arpa/inet.h>
 #include <iostream>
 #include <netinet/in.h>
-#include <string>
 #include <sys/socket.h>
 #include <thread>
 #include <unistd.h>
+#include <vector>
+
+#ifdef __linux__
+#include <pthread.h>
+#include <cstring>
+#include <algorithm>
+#endif
 
 const int BUFFER_SIZE = 4096;
 
